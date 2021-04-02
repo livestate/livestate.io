@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Jellee";
+  font-weight: bold;
+  src: url("/font/Jellee-Roman.otf") format("opentype");
+}
+
+a {
+  @apply text-flamingo-800 hover:text-flamingo-600 underline transition;
+}
