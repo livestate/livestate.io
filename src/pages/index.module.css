@@ -1,5 +1,5 @@
 .section {
-  @apply max-w-[600px] my-4 text-gray-500 text-left flex flex-col items-start w-full;
+  @apply my-4 text-gray-500 text-left flex flex-col items-start w-full;
 }
 
 .sectionTitle {
