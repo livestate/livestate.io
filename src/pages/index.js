@@ -48,7 +48,7 @@ export default function Home() {
               Still using REST or GraphQL? 😅
             </p>
             <h1 className="text-3xl font-jellee text-gray-300">
-              realtime, universal state as a service
+              realtime, universal state as a service platform
             </h1>
           </div>
           <div className="overflow-hidden rounded-xl border border-gray-800">
