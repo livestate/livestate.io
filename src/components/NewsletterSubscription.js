@@ -35,10 +35,16 @@ export const NewsletterSubscription = ({ className }) => {
         </Form>
       </Formik>
       {status === STATUSES.SUCCESS && (
-        <p className="text-green-600 mt-2">Thank you for subscription 🎉</p>
+        <p
+          className="text-green-600 mt-2"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
       )}
       {status === STATUSES.ERROR && (
-        <p className="text-red-400 mt-2">Somehing went wrong! 🤬</p>
+        <p
+          className="text-red-400 mt-2"
+          dangerouslySetInnerHTML={{ __html: message }}
+        />
       )}
     </div>
   );
