@@ -6,6 +6,7 @@ import styles from "./index.module.css";
 import { LiveStateProvider, useLiveState, uuid } from "livestate";
 import { Button } from "../components/Button";
 import { useEffect } from "react";
+import { NewsletterSubscription } from "~/components/NewsletterSubscription";
 
 const codeString = `// usage in React
 const [{ count }, setState] = useLiveState({
@@ -19,7 +20,10 @@ const [{ count }, setState] = useLiveState({
 
 <button onClick={() => setState({ count: 1 })}>
   Reset
-</button>`;
+</button>
+
+<p>{count}</p>
+`;
 
 const Logo = () => (
   <div className="flex flex-row items-center">
@@ -42,35 +46,43 @@ export default function Home() {
         </div>
       </nav>
       <main className="flex flex-col items-center">
+        <div className="mt-4 mb-8">
+          <p className="uppercase text-gray-500">
+            Still using REST or GraphQL? 😅
+          </p>
+          <h1 className="text-3xl font-jellee text-gray-300">
+            realtime, universal state as a service platform
+          </h1>
+        </div>
+
+        <div>
+          <h3 className="font-jellee text-3xl text-white">Example</h3>
+          <div className="flex rounded-3xl border-gray-400 border-4 p-4 my-4 justify-around">
+            <div className="overflow-hidden rounded-xl border border-gray-800 mr-8">
+              <SyntaxHighlighter
+                showLineNumbers
+                language="js"
+                style={atomDark}
+                customStyle={{ margin: 0 }}
+              >
+                {codeString}
+              </SyntaxHighlighter>
+            </div>
+            <div>
+              <h4 className="text-white text-6xl my-8">Result</h4>
+              <LiveStateExample />
+              <p className="text-gray-400 italic text-sm">
+                Open a second browser window and click 3 times to see the magic
+                🪄
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="w-full md:max-w-[640px]">
-          <div className="mt-4 mb-8">
-            <p className="uppercase text-gray-500">
-              Still using REST or GraphQL? 😅
-            </p>
-            <h1 className="text-3xl font-jellee text-gray-300">
-              realtime, universal state as a service platform
-            </h1>
+          <div className="my-16">
+            <NewsletterSubscription />
           </div>
-          <div className="overflow-hidden rounded-xl border border-gray-800">
-            <SyntaxHighlighter
-              showLineNumbers
-              language="js"
-              style={atomDark}
-              customStyle={{ margin: 0 }}
-            >
-              {codeString}
-            </SyntaxHighlighter>
-          </div>
-          <div className="rounded-3xl border-gray-400 border-4 p-4 my-4">
-            <h3 className="font-jellee text-3xl text-white">Example</h3>
-
-            <LiveStateExample />
-
-            <p className="text-gray-400 italic text-sm">
-              Open a second browser window and click 3 times to see the magic 🪄
-            </p>
-          </div>
-
           <div className={styles.section}>
             <h3 className={styles.sectionTitle}>How it works 🦾</h3>
             <p className={styles.sectionText}>
