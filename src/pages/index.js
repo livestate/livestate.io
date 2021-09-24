@@ -55,34 +55,30 @@ export default function Home() {
           </h1>
         </div>
 
-        <div>
-          <h3 className="font-jellee text-3xl text-white">Example</h3>
-          <div className="flex rounded-3xl border-gray-400 border-4 p-4 my-4 justify-around">
-            <div className="overflow-hidden rounded-xl border border-gray-800 mr-8">
-              <SyntaxHighlighter
-                showLineNumbers
-                language="js"
-                style={atomDark}
-                customStyle={{ margin: 0 }}
-              >
-                {codeString}
-              </SyntaxHighlighter>
-            </div>
-            <div>
-              <h4 className="text-white text-6xl my-8">Result</h4>
-              <LiveStateExample />
-              <p className="text-gray-400 italic text-sm">
-                Open a second browser window and click 3 times to see the magic
-                🪄
-              </p>
-            </div>
+        <div className="flex flex-col md:flex-row w-full md:max-w-5xl items-center rounded-3xl border-gray-400 border-4 my-4 justify-around overflow-hidden">
+          <div className="w-full rounded-xl border border-gray-800 text-[10px] md:text-base">
+            <SyntaxHighlighter
+              showLineNumbers
+              language="js"
+              style={atomDark}
+              customStyle={{ margin: 0 }}
+            >
+              {codeString}
+            </SyntaxHighlighter>
+          </div>
+          <div className="flex flex-col max-w-[480px] p-4">
+            <h4 className="text-white text-4xl my-4 md:my-8">Result</h4>
+            <LiveStateExample />
+            <p className="text-gray-400 italic text-sm">
+              Open a second browser window and click 3 times to see the magic 🪄
+            </p>
           </div>
         </div>
 
-        <div className="w-full md:max-w-[640px]">
-          <div className="my-16">
-            <NewsletterSubscription />
-          </div>
+        <div className="my-16 max-w-lg">
+          <NewsletterSubscription />
+        </div>
+        <div className="w-full md:max-w-5xl">
           <div className={styles.section}>
             <h3 className={styles.sectionTitle}>How it works 🦾</h3>
             <p className={styles.sectionText}>

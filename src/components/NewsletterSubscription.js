@@ -27,7 +27,7 @@ export const NewsletterSubscription = ({ className }) => {
             type="email"
           />
           <button
-            className="p-2 px-4 rounded-xl bg-purple-400 hover:bg-purple-600 text-white w-[200px]"
+            className="p-2 px-4 rounded-xl bg-flamingo-700 hover:bg-flamingo-900 text-white w-[100px]"
             type="submit"
           >
             Submit

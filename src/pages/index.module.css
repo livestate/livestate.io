@@ -3,5 +3,5 @@
 }
 
 .sectionTitle {
-  @apply text-lg text-gray-300 font-bold;
+  @apply text-2xl text-gray-300 font-bold;
 }
